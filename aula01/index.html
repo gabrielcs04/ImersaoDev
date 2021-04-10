@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imersão Dev - Aula 01</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Moedas - Aula 01</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 class="page-title">Conversor de moedas</h1>
-        <p class="page-subtitle">Coverta dolar U$ em real R$</p>
+      <h1 class="page-title">Conversor de moedas</h1>
+      <p class="page-subtitle">Coverta dolar U$ em real R$</p>
 
-        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt="">
+      <img
+        src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
+        class="page-logo"
+        alt=""
+      />
 
-        <form>
-            <input type="number" id="valorEmDolar" name="valorEmDolar" placeholder="Valor a ser convertido">
-            <input type="button" id='button' value="Calcular" onclick="calcular()">
-        </form>
+      <form>
+        <input
+          type="number"
+          id="valorEmDolar"
+          name="valorEmDolar"
+          placeholder="Valor a ser convertido"
+        />
+        <input
+          type="button"
+          id="button"
+          value="Calcular"
+          onclick="calcular()"
+        />
+      </form>
 
-        <h2 id="conversao">R$</h2>
+      <h2 id="conversao">R$</h2>
     </div>
     <a href="https://alura.com.br/" target="_blank">
-        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+      <img
+        src="https://www.alura.com.br/assets/img/home/alura-logo.svg"
+        alt=""
+        class="alura-logo"
+      />
     </a>
-    
+
     <script src="./scripts.js"></script>
-</body>
+  </body>
 </html>
