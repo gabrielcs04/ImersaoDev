@@ -1,73 +1,86 @@
-var carta01 = {
-    nome: "Messi",
-    imagem: "https://img.estadao.com.br/resources/jpg/1/9/1582391516491.jpg",
-    atributos: {
-        ataque: 93,
-        defesa: 38,
-        drible: 95
-    }
-}
+// Base de dados futura
+// https://www.easports.com/fifa/ultimate-team/api/fut/item
 
-var carta02 = {
-    nome: "Cristiano Ronaldo",
-    imagem: "https://img.estadao.com.br/resources/jpg/8/4/1550670262848.jpg",
-    atributos: {
-        ataque: 92,
-        defesa: 36,
-        drible: 89
-    }
-}
-
-var carta03 = {
-    nome: "Neymar",
-    imagem: "https://medias.cnnbrasil.com.br/neymar-comemora-gol-contra-o-olympique-lyonnais.jpeg?format=JPEG&image=https://mediastorage.cnnbrasil.com.br/IMAGES/00/00/00/8661_E70738C3CB0FD632.jpg&width=804&height=588&resize=CROP",
-    atributos: {
-        ataque: 91,
-        defesa: 36,
-        drible: 94
-    }
-}
-
-var carta04 = {
-    nome: "Halland",
-    imagem: "https://lagambeta.com/wp-content/uploads/2020/11/0000000000000000000000000000.jpg",
-    atributos: {
-        ataque: 84,
-        defesa: 43,
-        drible: 76
-    }
-}
-
-var carta05 = {
-    nome: "Mbappé",
-    imagem: "https://futebolatino.lance.com.br/wp-content/uploads/2020/10/mbappe-monta-seu-psg-historico-com-dani-alves-e-yepes-Futebol-Latino-27-10.jpg",
-    atributos: {
-        ataque: 90,
-        defesa: 39,
-        drible: 91
-    }
-}
-
-var carta06 = {
-    nome: "Lewandowski",
-    imagem: "https://esportenewsmundo.com.br/wp-content/uploads/2020/12/fc-bayern-muenchen-v-1-fc-union-berlin-bundesliga-scaled.jpg",
-    atributos: {
-        ataque: 91,
-        defesa: 43,
-        drible: 86
-    }
-}
-
+init();
 var cartaMaquina;
 var cartaJogador;
-
-var cartas = [carta01, carta02, carta03, carta04, carta05, carta06];
-
+var cartas;
 var pontosJogador = 0;
 var pontosMaquina = 0;
 
-atualizaPlacar();
-atualizaQuantidadeDeCartas();
+async function init(){
+    await carregarDados();
+    await atualizaPlacar();
+    await atualizaQuantidadeDeCartas();
+}
+
+async function carregarDados() {
+    const response = await fetch("./dados.json");
+    const json = await response.json();
+    cartas = json;
+}
+
+// var carta01 = {
+//     nome: "Messi",
+//     imagem: "https://img.estadao.com.br/resources/jpg/1/9/1582391516491.jpg",
+//     atributos: {
+//         ataque: 93,
+//         defesa: 38,
+//         drible: 95
+//     }
+// }
+
+// var carta02 = {
+//     nome: "Cristiano Ronaldo",
+//     imagem: "https://img.estadao.com.br/resources/jpg/8/4/1550670262848.jpg",
+//     atributos: {
+//         ataque: 92,
+//         defesa: 36,
+//         drible: 89
+//     }
+// }
+
+// var carta03 = {
+//     nome: "Neymar",
+//     imagem: "https://medias.cnnbrasil.com.br/neymar-comemora-gol-contra-o-olympique-lyonnais.jpeg?format=JPEG&image=https://mediastorage.cnnbrasil.com.br/IMAGES/00/00/00/8661_E70738C3CB0FD632.jpg&width=804&height=588&resize=CROP",
+//     atributos: {
+//         ataque: 91,
+//         defesa: 36,
+//         drible: 94
+//     }
+// }
+
+// var carta04 = {
+//     nome: "Halland",
+//     imagem: "https://lagambeta.com/wp-content/uploads/2020/11/0000000000000000000000000000.jpg",
+//     atributos: {
+//         ataque: 84,
+//         defesa: 43,
+//         drible: 76
+//     }
+// }
+
+// var carta05 = {
+//     nome: "Mbappé",
+//     imagem: "https://futebolatino.lance.com.br/wp-content/uploads/2020/10/mbappe-monta-seu-psg-historico-com-dani-alves-e-yepes-Futebol-Latino-27-10.jpg",
+//     atributos: {
+//         ataque: 90,
+//         defesa: 39,
+//         drible: 91
+//     }
+// }
+
+// var carta06 = {
+//     nome: "Lewandowski",
+//     imagem: "https://esportenewsmundo.com.br/wp-content/uploads/2020/12/fc-bayern-muenchen-v-1-fc-union-berlin-bundesliga-scaled.jpg",
+//     atributos: {
+//         ataque: 91,
+//         defesa: 43,
+//         drible: 86
+//     }
+// }
+//var cartasOld = [carta01, carta02, carta03, carta04, carta05, carta06];
+
 
 function atualizaQuantidadeDeCartas() {
     var divQuantidadeCartas = document.querySelector("#quantidade-cartas");
@@ -135,7 +148,7 @@ function exibeCartaMaquina() {
 }
 
 function desenhaCarta(jogador, isUsuario = false){
-    
+
     let opcoes = ""
     if(isUsuario){
         for (var atributo in jogador.atributos) {
@@ -147,10 +160,6 @@ function desenhaCarta(jogador, isUsuario = false){
             opcoes += `<label type="text" name="atributo" value="${atributo}"> ${atributo} ${jogador.atributos[atributo]}</label>`;
         }
     }
-
-    console.log(jogador);
-    console.log(opcoes);
-
 
     const html = 
     `<div class="card">
@@ -212,7 +221,7 @@ function verificaResultado() {
         } else {
             exibeAlerta("Empate. Por pouco!");
         }
-        divResultado.innerHTML = "";
+        // document.querySelector("#resultado").innerHTML = "";
         
     } else {
         document.getElementById("btnProximaRodada").disabled = false;

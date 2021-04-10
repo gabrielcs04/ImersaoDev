@@ -1,0 +1,56 @@
+[
+  {
+    "nome": "Messi",
+    "imagem": "https://img.estadao.com.br/resources/jpg/1/9/1582391516491.jpg",
+    "atributos": {
+      "ataque": 93,
+      "defesa": 38,
+      "drible": 95
+    }
+  },
+  {
+    "nome": "Cristiano Ronaldo",
+    "imagem": "https://img.estadao.com.br/resources/jpg/8/4/1550670262848.jpg",
+    "atributos": {
+      "ataque": 92,
+      "defesa": 36,
+      "drible": 89
+    }
+  },
+  {
+    "nome": "Neymar",
+    "imagem": "https://medias.cnnbrasil.com.br/neymar-comemora-gol-contra-o-olympique-lyonnais.jpeg?format=JPEG&image=https://mediastorage.cnnbrasil.com.br/IMAGES/00/00/00/8661_E70738C3CB0FD632.jpg&width=804&height=588&resize=CROP",
+    "atributos": {
+      "ataque": 91,
+      "defesa": 36,
+      "drible": 94
+    }
+  },
+  {
+    "nome": "Halland",
+    "imagem": "https://lagambeta.com/wp-content/uploads/2020/11/0000000000000000000000000000.jpg",
+    "atributos": {
+      "ataque": 84,
+      "defesa": 43,
+      "drible": 76
+    }
+  },
+  {
+    "nome": "Mbappé",
+    "imagem": "https://futebolatino.lance.com.br/wp-content/uploads/2020/10/mbappe-monta-seu-psg-historico-com-dani-alves-e-yepes-Futebol-Latino-27-10.jpg",
+    "atributos": {
+      "ataque": 90,
+      "defesa": 39,
+      "drible": 91
+    }
+  },
+  {
+    "nome": "Lewandowski",
+    "imagem": "https://esportenewsmundo.com.br/wp-content/uploads/2020/12/fc-bayern-muenchen-v-1-fc-union-berlin-bundesliga-scaled.jpg",
+    "atributos": {
+      "ataque": 91,
+      "defesa": 43,
+      "drible": 86
+    }
+  }
+]
